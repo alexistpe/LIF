@@ -60,7 +60,7 @@ def correr_modelo_lif_doble_capa_sin_precipitacion():
     RANGO_PERCENTIL_SENSOR = np.arange(40, 96, 5)
     RANGO_PERCENTIL_ALERTA = np.arange(40, 96, 5)
 
-    # Memoria de la alerta (tau_A) en horas: 0.5 a 12 con paso 0.5. 
+    # Memoria de la alerta (tau_A) en horas: 0.5 a 12 con paso 0.5.
     # El rango incluye el valor "12", debido a esto se extiende el limite ligeramente.
     RANGO_TAU_ALERTA_HORAS = np.arange(0.5, 12.001, 0.5)
 

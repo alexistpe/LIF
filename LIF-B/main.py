@@ -89,6 +89,13 @@ def correr_modelo_lif_doble_capa_precipitacion():
     print(f"Datos divididos por fechas: Ajuste={X_ajuste.shape[0]}, "
           f"Calibración={X_calibracion.shape[0]}, Validación={X_validacion.shape[0]}")
 
+    for nombre, y_seccion in (("Ajuste", y_ajuste), ("Calibración", y_calibracion),
+                                ("Validación", y_validacion)):
+        total = int(y_seccion.size)
+        lluvia = int(y_seccion.sum())
+        print(f"  {nombre}: {lluvia} horas de lluvia (objetivo=1) de {total} "
+              f"({100.0 * lluvia / total:.1f} %)")
+
     # --- 2. Ajuste y Calibración (Búsqueda de Hiperparámetros y Entrenamiento de Pesos) ---
     os.makedirs(RUTA_BASE_SALIDA, exist_ok=True)
 
